@@ -1,5 +1,7 @@
 package com.uberdist.produto;
 
+import java.util.List;
+
 import javax.faces.bean.ManagedBean;
 
 @ManagedBean
@@ -9,10 +11,19 @@ public class ProdutoBean {
 
 	private Produtos produtos = new HibernateProdutoDao();
 	
+	private List<Produto> lista;
+	
 	public String salva() {
 		produtos.cadastra(produto);
 		
 		return "produto?faces-redirect=true";
+	}
+	
+	public List<Produto> getLista() {
+		if (lista == null) {
+			lista = produtos.todos();
+		}
+		return lista;
 	}
 	
 	public Produto getProduto() {
