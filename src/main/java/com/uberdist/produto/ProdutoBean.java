@@ -7,7 +7,7 @@ public class ProdutoBean {
 
 	private Produto produto = new Produto();
 
-	private ProdutoDao produtos = new ProdutoDao();
+	private Produtos produtos = new HibernateProdutoDao();
 	
 	public String salva() {
 		produtos.cadastra(produto);

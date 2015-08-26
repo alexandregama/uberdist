@@ -4,7 +4,7 @@ import javax.persistence.EntityManager;
 
 import com.uberdist.infra.JPAUtil;
 
-public class ProdutoDao {
+class HibernateProdutoDao implements Produtos {
 
 	public void cadastra(Produto produto) {
 		EntityManager manager = new JPAUtil().getEntityManager();
