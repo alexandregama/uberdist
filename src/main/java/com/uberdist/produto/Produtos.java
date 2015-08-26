@@ -9,5 +9,7 @@ public interface Produtos {
 	List<Produto> todos();
 
 	void remove(Produto produto);
+
+	void altera(Produto produto);
 	
 }

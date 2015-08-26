@@ -14,7 +14,11 @@ public class ProdutoBean {
 	private List<Produto> lista;
 	
 	public String salva() {
-		produtos.cadastra(produto);
+		if (produto.getId() == null) {
+			produtos.cadastra(produto);
+		} else {
+			produtos.altera(produto);
+		}
 		
 		return "produto?faces-redirect=true";
 	}

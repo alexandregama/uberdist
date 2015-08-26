@@ -42,4 +42,15 @@ class HibernateProdutoDao implements Produtos {
 		manager.close();
 	}
 
+	@Override
+	public void altera(Produto produto) {
+		EntityManager manager = new JPAUtil().getEntityManager();
+		
+		manager.getTransaction().begin();
+		manager.merge(produto);
+		manager.getTransaction().commit();
+		
+		manager.close();
+	}
+
 }
