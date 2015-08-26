@@ -19,6 +19,12 @@ public class ProdutoBean {
 		return "produto?faces-redirect=true";
 	}
 	
+	public String remove(Produto produto) {
+		produtos.remove(produto);
+		
+		return "produto?faces-redirect=true";
+	}
+	
 	public List<Produto> getLista() {
 		if (lista == null) {
 			lista = produtos.todos();

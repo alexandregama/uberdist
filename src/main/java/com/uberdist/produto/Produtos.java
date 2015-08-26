@@ -7,5 +7,7 @@ public interface Produtos {
 	void cadastra(Produto produto);
 
 	List<Produto> todos();
+
+	void remove(Produto produto);
 	
 }

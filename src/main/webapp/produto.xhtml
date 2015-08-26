@@ -47,6 +47,11 @@
 				<f:facet name="header">Preço</f:facet>
 				<h:outputText value="#{produto.preco}"/>
 			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Remover | Alterar</f:facet>
+				<h:commandLink value="remover" action="#{produtoBean.remove(produto)}"></h:commandLink>
+			</h:column>
 		</h:dataTable>
 	</h:form>
 </h:body>
