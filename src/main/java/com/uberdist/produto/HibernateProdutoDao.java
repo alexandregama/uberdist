@@ -21,7 +21,7 @@ class HibernateProdutoDao implements Produtos {
 	@Override
 	public List<Produto> todos() {
 		EntityManager manager = new JPAUtil().getEntityManager();
-		String jpql = "select p from Produto p";
+		String jpql = "select p from " + Produto.class.getSimpleName() + " p";
 		TypedQuery<Produto> produtos = manager.createQuery(jpql, Produto.class);
 		
 		return produtos.getResultList();
