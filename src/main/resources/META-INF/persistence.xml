@@ -8,7 +8,7 @@
 
 		<jta-data-source>java:/fj26DS</jta-data-source>
 
-		<class>br.com.uberdist.produto.Produto</class>
+		<class>com.uberdist.produto.Produto</class>
 
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
