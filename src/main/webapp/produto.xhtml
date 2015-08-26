@@ -11,7 +11,13 @@
 </h:head>
 
 <h:body>
+
+	<h2><h:outputText value="Novo Produto" rendered="#{empty produtoBean.produto.id}"/></h2>
+	<h2><h:outputText value="Editar Produto" rendered="#{not empty produtoBean.produto.id}"/></h2>
+	
 	<h:form id="cadastro_produto">
+		<h:inputHidden id="id" value="#{produtoBean.produto.id}" />
+		
 		<h:panelGrid columns="2">
 			<h:outputLabel value="Nome: " for="nome" />
 			<h:inputText id="nome" value="#{produtoBean.produto.nome}" />
@@ -46,6 +52,14 @@
 			<h:column>
 				<f:facet name="header">Preço</f:facet>
 				<h:outputText value="#{produto.preco}"/>
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Ação</f:facet>
+				<h:commandLink value="remover" action="#{produtoBean.remove(produto)}" /> | 
+				<h:commandLink value="alterar">
+					<f:setPropertyActionListener value="#{produto}" target="#{produtoBean.produto}" />
+				</h:commandLink>
 			</h:column>
 		</h:dataTable>
 	</h:form>
