@@ -9,8 +9,10 @@ public class ProdutoBean {
 
 	private ProdutoDao produtos = new ProdutoDao();
 	
-	public void salva() {
+	public String salva() {
 		produtos.cadastra(produto);
+		
+		return "produto?faces-redirect=true";
 	}
 	
 	public Produto getProduto() {
